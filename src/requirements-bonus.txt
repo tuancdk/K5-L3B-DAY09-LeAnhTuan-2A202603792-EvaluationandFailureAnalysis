@@ -1,0 +1,2 @@
+# Bonus only (not used by CI): Inspect AI port of 3 lab9 graders. python -m bonus.inspect_port
+inspect_ai==0.3.291
