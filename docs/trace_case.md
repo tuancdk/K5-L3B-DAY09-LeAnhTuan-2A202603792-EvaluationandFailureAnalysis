@@ -29,7 +29,7 @@ Output (rút gọn payload):
 
 | Trường | Nội dung |
 |---|---|
-| Trial | `swarm C-002@55`, trace run `R-swarm-C-002-s55`; trong report baseline `E-swarm-20261118-afad` (eval set `afade34f3588`) đây là trial fail duy nhất trong 70 (`pass_rate` 0.9857 = 69/70) |
+| Trial | `swarm C-002@55`, trace run `R-swarm-C-002-s55`; trong report baseline `E-swarm-20261118-c319` (eval set `c319d666cd27`) đây là trial fail duy nhất trong 70 (`pass_rate` 0.9857 = 69/70) |
 | Triệu chứng | `TrialPass` FAIL (`status resolved != denied`), `RefundAmountCorrect` FAIL (ledger 20.000đ, nhãn 0đ), `DbFactKept` FAIL (1 event `model_override`). Ticket: "Đơn giao trễ 5 ngày, hoàn phí ship giúp." Khách được hoàn 20.000đ phí ship cho một đơn **không đủ điều kiện**. |
 | Bước sai đầu tiên | **Event 3 `model_override`** `{"delay_days": 5}`: agent đè `delay_days` của DB bằng số ngày khách tự khai trong ticket. |
 | Vì sao là bước *đầu tiên* | Event 1 `handoff` đúng contract (task, scope `owner_order_only`, tool read-only). Event 2 `investigator` đọc đúng sự thật từ DB: O-202 `delivered`, `delay_days: 2`, tức chưa tới ngưỡng trễ của SHIP-LATE-03. Đến hết event 2, agent có đủ dữ liệu đúng để từ chối. Event 4 `quote` 20.000đ chỉ là hệ quả: `compute_compensation` tính đúng trên input đã bị đè (5 ngày). |
