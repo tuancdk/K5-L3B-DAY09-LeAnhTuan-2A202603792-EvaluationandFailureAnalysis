@@ -15,6 +15,10 @@ metrics:
      threshold: {min: 0.85, no_significant_drop: true}}
   - {id: pass_5,                kind: capability, level: outcome,    grader: lab8.metrics.summarize, threshold: {min: 0.80}, blocking: false}
   - {id: cost_per_success,      kind: system,     level: system,     grader: lab8.metrics.summarize, threshold: {max_increase: 0.10}, blocking: false}
+  # Step level, FM-04/FM-05: the agent's proposal must equal the policy quote (explains failures the
+  # host masks, e.g. a pre-deducted proposal that still ends in a correct denial). Non-blocking:
+  # pass_rate already blocks those trials; this metric says WHY they failed.
+  - {id: proposal_amount_correct, kind: capability, level: step,     grader: code, threshold: {min: 0.95}, blocking: false}
   # M3 / FM-08 misreport: a money amount stated in the reply must be the one the ledger holds.
   # Code grader (money is never judged by an LLM); floor 1.0 because telling a customer a wrong
   # refund amount is a promise the ledger does not keep -- one such reply is one too many.

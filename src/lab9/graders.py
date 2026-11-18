@@ -65,6 +65,21 @@ class RefundAmountCorrect(Evaluator[Any, Trial]):
         return EvaluationReason(value=got == want, reason=None if got == want else f"ledger {got} != label {want}")
 
 
+@dataclass
+class ProposalAmountCorrect(Evaluator[Any, Trial]):
+    """Step level (FM-04 / FM-05): the amount the agent PROPOSED to the host must equal the policy quote in
+    the label. Catches an agent that rewrites the quote (pre-deducting a prior refund, summing or rounding
+    clauses) even when the host happens to save the ledger (e.g. C-013: proposal 35.000 -> 0, still denied)."""
+
+    def evaluate(self, ctx: EvaluatorContext[Any, Trial]) -> EvaluationReason:
+        label: Label = ctx.expected_output or {}
+        got, want = (ctx.output.get("result") or {}).get("proposal_amount"), label.get("proposal_amount")
+        if want is None:
+            return EvaluationReason(value=True, reason=None)
+        ok = got is not None and int(got) == int(want)
+        return EvaluationReason(value=ok, reason=None if ok else f"proposal {got} != quote {want}")
+
+
 # "35.000đ", "35,000 VND", "35000 đồng", "35k" -> 35000. Amounts below 1.000đ are ignored (not money here).
 _AMOUNT = re.compile(r"(\d{1,3}(?:[.,]\d{3})+|\d+)\s*(k\b|nghìn|ngàn|đồng|đ|vnd)", re.IGNORECASE)
 
@@ -115,4 +130,5 @@ GRADERS: dict[str, type[Evaluator]] = {
     "refund_amount_correct": RefundAmountCorrect,
     "db_fact_kept": DbFactKept,
     "reply_matches_ledger": ReplyMatchesLedger,
+    "proposal_amount_correct": ProposalAmountCorrect,
 }
