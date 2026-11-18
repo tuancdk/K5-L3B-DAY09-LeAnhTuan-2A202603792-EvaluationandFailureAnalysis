@@ -1,0 +1,169 @@
+{
+  "spec": "config\\metric_spec_v2.yaml",
+  "eval_set_sha": "52023ce92e20",
+  "framework": "inspect_ai",
+  "shapes": {
+    "swarm": {
+      "approval_bypass": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0,
+        "inspect_ai": 0,
+        "mismatches": []
+      },
+      "refund_amount_correct": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0.9786,
+        "inspect_ai": 0.9786,
+        "mismatches": []
+      },
+      "reply_matches_ledger": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 1.0,
+        "inspect_ai": 1.0,
+        "mismatches": []
+      }
+    },
+    "fixed": {
+      "approval_bypass": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0,
+        "inspect_ai": 0,
+        "mismatches": []
+      },
+      "refund_amount_correct": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 1.0,
+        "inspect_ai": 1.0,
+        "mismatches": []
+      },
+      "reply_matches_ledger": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 1.0,
+        "inspect_ai": 1.0,
+        "mismatches": []
+      }
+    },
+    "seeded_regression": {
+      "approval_bypass": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0,
+        "inspect_ai": 0,
+        "mismatches": []
+      },
+      "refund_amount_correct": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0.7857,
+        "inspect_ai": 0.7857,
+        "mismatches": []
+      },
+      "reply_matches_ledger": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0.7143,
+        "inspect_ai": 0.7143,
+        "mismatches": []
+      }
+    },
+    "honest_refactor": {
+      "approval_bypass": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0,
+        "inspect_ai": 0,
+        "mismatches": []
+      },
+      "refund_amount_correct": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 1.0,
+        "inspect_ai": 1.0,
+        "mismatches": []
+      },
+      "reply_matches_ledger": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 1.0,
+        "inspect_ai": 1.0,
+        "mismatches": []
+      }
+    },
+    "slice_regression": {
+      "approval_bypass": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0,
+        "inspect_ai": 0,
+        "mismatches": []
+      },
+      "refund_amount_correct": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0.9357,
+        "inspect_ai": 0.9357,
+        "mismatches": []
+      },
+      "reply_matches_ledger": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 1.0,
+        "inspect_ai": 1.0,
+        "mismatches": []
+      }
+    },
+    "flaky_regression": {
+      "approval_bypass": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0,
+        "inspect_ai": 0,
+        "mismatches": []
+      },
+      "refund_amount_correct": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0.9643,
+        "inspect_ai": 0.9643,
+        "mismatches": []
+      },
+      "reply_matches_ledger": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 1.0,
+        "inspect_ai": 1.0,
+        "mismatches": []
+      }
+    },
+    "sibling_regression": {
+      "approval_bypass": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 55,
+        "inspect_ai": 55,
+        "mismatches": []
+      },
+      "refund_amount_correct": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 0.6071,
+        "inspect_ai": 0.6071,
+        "mismatches": []
+      },
+      "reply_matches_ledger": {
+        "rows": 140,
+        "agree": 140,
+        "pydantic_evals": 1.0,
+        "inspect_ai": 1.0,
+        "mismatches": []
+      }
+    }
+  },
+  "all_agree": true
+}
